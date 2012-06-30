@@ -9,25 +9,18 @@ Pharen is a compiler that takes a [Lisp](http://en.wikipedia.org/wiki/Lisp_%28pr
 language and turns it into [PHP](http://php.net/) code. This combines Lisp's advantages of uniform syntax and homoiconicity (among others)
 and PHP's advantage of...being *everywhere*. Here's some sample Pharen and the equivalent PHP:
 
-<div class='code-left'>
-{% highlight clojure %}
+```
 (fn greet-person (name)
     (. "Hello " name "!"))
-
 (echo (greet-person "visitor"))
-{% endhighlight %}
-</div>
-<div class='code-right'>
-{% highlight php startinline %}
-<?php
+```
+
+```
 function greet_person($name){
     return "Hello " . $name . "!";
 }
-
 echo greet_person("visitor");
-?>
-{% endhighlight %}
-</div>
+```
 
 This shows some of the differences between the two languages. Variables don't need the `$` prefix,
 hyphens in names for functions (and variables) are converted to underscores,
